@@ -1,0 +1,21 @@
+.btn-black-landing {
+  background: #000000;
+  color: #FFFFFF;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 15px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-black-landing:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  -webkit-transform: translate(0, -0.15rem);
+        transform: translate(0, -0.15rem);
+}
+
+

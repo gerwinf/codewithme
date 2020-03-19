@@ -1,2 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<main>
+  <div class="taglines">
+    <span class="h-text">Learn </span>
+    <span class="h-text">to </span>
+    <br>
+    <span class="h-text enhance"><i class="fas fa-code"></i></span>
+    <span class="h-text enhance">CodeWithMe</span>
+    <span class="tagline-p">
+      <p>Block out time, work with fellow coding beginners remotely, and push each other to the next level.</p>
+    </span>
+    <a href="users/sign_up" class="btn-black-landing">Get started for free</a>
+  </div>
+<main>
+
+<script>
+
+window.onload = (event) => {
+  const texts = document.querySelectorAll(".enhance");
+  texts.forEach((text) => {
+    text.classList.add('highlight');
+    // text.addEventListener('transitionend', removeTransition)
+  });
+}
+
+function removeTransition(event) {
+  this.classList.remove('highlight');
+};
+
+</script>
+
+

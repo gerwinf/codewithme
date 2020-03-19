@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+main {
+  background: white;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .taglines {
+    text-align: center;
+    width: 50%;
+    .h-text {
+      font-family: $landing-header;
+      font-size: 95px;
+      transition: all 1.1s ease;
+      font-weight: bolder;
+    }
+    p {
+    font-size: 25px;
+    padding-bottom: 20px;
+    }
+  }
+}
+
+.highlight {
+  font-size: 1.1rem;
+  // text-transform: uppercase;
+  letter-spacing: .08rem;
+  color: #ffc600;
+}
