@@ -8,7 +8,7 @@ main {
 
   .taglines {
     text-align: center;
-    width: 50%;
+    width: 50vw;
     .h-text {
       font-family: $landing-header;
       font-size: 95px;
@@ -27,4 +27,20 @@ main {
   // text-transform: uppercase;
   letter-spacing: .08rem;
   color: #ffc600;
+}
+
+
+@media (max-width: 540px) {
+  main {
+    .taglines {
+      text-align: center;
+      width: 80vw;
+      .h-text {
+        font-size: 55px;
+      }
+      p {
+      font-size: 18px;
+      }
+    }
+  }
 }
