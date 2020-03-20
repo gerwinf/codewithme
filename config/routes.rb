@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  recources :groups, only: [:index, :show, :new, :create, :update, :edit, :delete]
+  resources :groups, only: [:create]
   resources :activities, only: [:index, :new, :create, :update, :edit, :delete]
 
   # For Login and Signup Modal
