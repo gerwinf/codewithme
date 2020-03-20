@@ -1,0 +1,35 @@
+<div class="modal fade bd-example-modal-lg modal-signup"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Please Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="errors"></div>
+        <%= simple_form_for(resource_name, :url => registration_path(resource_name), remote: true) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+          <div class="modal-footer">
+            <%= f.button :submit, "Sign Up", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
