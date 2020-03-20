@@ -7,8 +7,10 @@
     <span class="tagline-p">
       <p>Block out time, work with fellow coding beginners remotely, and push each other to the next level.</p>
     </span>
+    <%= link_to "Get started for free", "", data: {toggle: "modal", target: ".modal-signup"} %>
     <a href="users/sign_up" class="btn-black-landing">Get started for free</a>
   </div>
+  <%= render 'shared/signup_form' %>
 <main>
 
 <script>
