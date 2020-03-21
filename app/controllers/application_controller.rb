@@ -17,4 +17,13 @@ class ApplicationController < ActionController::Base
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  # To redirect the user to activities page after login
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || activities_path
+  end
+  # To redirect the user to activities page after signup
+  def after_sign_up_path_for(resource)
+    stored_location_for(resource) || activities_path
+  end
 end
