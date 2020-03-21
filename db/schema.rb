@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_110641) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "link"
-    t.integer "start_time"
-    t.integer "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "group_activities", force: :cascade do |t|
