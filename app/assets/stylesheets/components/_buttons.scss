@@ -18,4 +18,29 @@
         transform: translate(0, -0.15rem);
 }
 
+.facebook-signup {
+  background: #4267B2;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: .5em 1em;
+  margin: .5em 0;
+  font-size: 1.2em;
+  line-height: 1;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid #4267B2;
+  transition-property: color, background;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+
+  &:before {
+    font-family: "Font Awesome 5 Brands"; font-weight: 900; content: "\f39e";
+  }
+
+  &:hover {
+    color: #4267B2;
+    text-decoration: none;
+    background: white;
+  }
+}
 
