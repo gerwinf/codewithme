@@ -4,4 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :email, presence: true, uniqueness: true
+
+  has_many :user_groups
+  has_many :groups, through: :user_groups
+  has_many :group_activities, through: :groups
+  has_many :activities, through: :group_activities
 end
