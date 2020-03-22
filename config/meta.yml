@@ -1,0 +1,5 @@
+meta_product_name: "code with me"
+meta_title: "code with me - Enhance your coding skills with your friends!"
+meta_description: "Block out time, work with fellow coding beginners remotely, and push each other to the next level."
+meta_image: "share-cover.png" # should exist in `app/assets/images/`
+twitter_account: "@codewithme" # required for Twitter Cards
