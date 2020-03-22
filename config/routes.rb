@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   # For Login and Signup Modal
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+
+    # For facebook authentication
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
