@@ -13,6 +13,10 @@ activity_3 = Activity.create(name: "Watch Rick and Morty + Beer", link: "", star
 activity_4 = Activity.create(name: "Complete Kitt Optionals - Week 1-3", link: "", start_time: DateTime.now, end_time: DateTime.now)
 activity_5 = Activity.create(name: "Fifa 2020 Tournament", link: "", start_time: DateTime.now, end_time: DateTime.now)
 
+puts "Adding a group..."
+
+group_1 = Group.create(name: "Morty Town Locos")
+
 activities = []
 
 activities << activity_1
