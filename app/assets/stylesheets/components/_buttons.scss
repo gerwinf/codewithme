@@ -50,12 +50,15 @@
   border-radius: 8px;
   font-weight: 700;
   padding: .5em 1em;
+  border: 2px solid #000000;
+  transition-property: color, background;
+  transition-duration: .5s;
+  transition-timing-function: ease;
 
   &:hover {
     text-decoration: none;
-    color: #FFFFFF;
-    -webkit-transform: translate(0, -0.15rem);
-          transform: translate(0, -0.15rem);
+    color: #000000;
+    background: #FFFFFF;
   }
 }
 
