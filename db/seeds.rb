@@ -1,5 +1,12 @@
 # Activity Seed File assigining 5 activities to latest user
 
+puts "Clearing the database..."
+
+GroupActivity.destroy_all
+Activity.destroy_all
+
+puts "Adding 5 activities..."
+
 activity_1 = Activity.create(name: "Javascript 30 Day Challenge", link: "", start_time: DateTime.now, end_time: DateTime.now)
 activity_2 = Activity.create(name: "Discuss Intro to Python Course", link: "", start_time: DateTime.now, end_time: DateTime.now)
 activity_3 = Activity.create(name: "Watch Rick and Morty + Beer", link: "", start_time: DateTime.now, end_time: DateTime.now)
@@ -11,6 +18,8 @@ activities = []
 activities << activity_1
 
 activities.each do |activity|
-  activity.user = User.last
+  activity.group = Group.last
   activity.save!
 end
+
+puts "Done!"
