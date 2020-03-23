@@ -1,0 +1,11 @@
+<div class="container">
+
+  <h1 class="d-flex justify-content-center">Add new activity</h1>
+  <%= simple_form_for(@activity) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :link %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.button :submit, class: "button-black" %>
+  <% end %>
+</div>
