@@ -1,5 +1,44 @@
 <h1>Activity Overview</h1>
 
-<% @activities.each do |activity| %>
-  <%= activity %>
-<% end %>
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">Today</a>
+      <% @activities.each do |activity| %>
+        <ul>
+          <% if activity.start_time.day == Date.today.mday %>
+            <li>
+              <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Tomorrow</a>
+      <% @activities.each do |activity| %>
+        <ul>
+          <% if activity.start_time.day == Date.tomorrow.mday %>
+            <li>
+              <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Later</a>
+      <% @activities.each do |activity| %>
+        <ul>
+          <% if activity.start_time > Date.tomorrow && activity.start_time.day != Date.tomorrow.mday %>
+            <li>
+              <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+  </li>
+</ul>
+
+
+<!-- activity.start_time.day > Date.tomorrow.mday -->
+<!-- activity.start_time.day == Date.tomorrow.mday -->
