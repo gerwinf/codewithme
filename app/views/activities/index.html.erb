@@ -2,7 +2,7 @@
 
 <ul class="list-inline tabs-underlined">
   <li>
-    <a href="#" class="tab-underlined active">Today</a>
+    <a href="#" class="tab-content tab-underlined active">Today</a>
       <% @activities.each do |activity| %>
         <ul>
           <% if activity.start_time.day == Date.today.mday %>
@@ -14,7 +14,7 @@
       <% end %>
   </li>
   <li>
-    <a href="#" class="tab-underlined">Tomorrow</a>
+    <a href="#" class="tab-content tab-underlined">Tomorrow</a>
       <% @activities.each do |activity| %>
         <ul>
           <% if activity.start_time.day == Date.tomorrow.mday %>
@@ -26,7 +26,7 @@
       <% end %>
   </li>
   <li>
-    <a href="#" class="tab-underlined">Later</a>
+    <a href="#" class="tab-content tab-underlined">Later</a>
       <% @activities.each do |activity| %>
         <ul>
           <% if activity.start_time > Date.tomorrow && activity.start_time.day != Date.tomorrow.mday %>
