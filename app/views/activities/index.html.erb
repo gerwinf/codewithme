@@ -1,6 +1,50 @@
 <h1>Activity Overview</h1>
 
-<ul class="nav nav-tabs tabs-underlined" id="myTab" role="tablist">
+<div class="dashboard-tabs">
+  <h5 class="tab active-tab" style="width: 23%;" data-show="today" aria-selected="true">Today</h5>
+  <h5 class="tab" style="width: 23%;" data-show="tomorrow" aria-selected="false">Tomorrow</h5>
+  <h5 class="tab" style="width: 23%;" data-show="later" aria-selected="false">Later</h5>
+</div>
+
+<div class="tab-content show active" id="today">
+  <% @activities.each do |activity| %>
+    <ul>
+      <% if activity.start_time.day == Date.today.mday && activity.start_time.month == Date.today.month %>
+        <li>
+          <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="tab-content hide-content" id="Tomorrow">
+  <% @activities.each do |activity| %>
+    <ul>
+      <% if activity.start_time.day == Date.tomorrow.mday %>
+        <li>
+          <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="tab-content hide-content" id="later">
+  <% @activities.each do |activity| %>
+    <ul>
+      <% if activity.start_time > Date.tomorrow && activity.start_time.day != Date.tomorrow.mday %>
+        <li>
+          <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<!-- Bootstrap Version -->
+
+<!-- <ul class="nav nav-tabs tabs-underlined" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link tab-underlined active" id="today-tab" data-toggle="tab" href="#today" role="tab" aria-controls="today" aria-selected="true">Today</a>
   </li>
@@ -46,3 +90,4 @@
     <% end %>
   </div>
 </div>
+ -->
