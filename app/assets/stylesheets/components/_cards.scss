@@ -1,0 +1,59 @@
+.meeting-wrapper {
+  margin-top: 5px;
+}
+
+.inner-meeting {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  border: 1px solid transparent;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #fff;
+  width: 960px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display:flex;
+}
+
+.time-info {
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.date-info-wrapper {
+  flex: 0 0 140px;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.user-wrapper {
+    flex: 0 0 auto;
+    display: flex;
+    border-left: 1px solid #BFBFBF;
+    padding-left: 20px;
+}
+
+.description-wrapper {
+    flex: 0 0 auto;
+    border-left: 1px solid #BFBFBF;
+    padding-left: 20px;
+}
+
+.photo-wrapper {
+  padding-right: 20px;
+}
+
+.actions-wrapper {
+    flex: 1 0 auto;
+    padding-left: 20px;
+    margin-left: 20px;
+    text-align: center;
+    justify-content: flex-end;
+}
+
