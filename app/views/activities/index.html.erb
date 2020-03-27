@@ -1,66 +1,31 @@
-<h1>Activity Overview</h1>
-
-<div class="dashboard-tabs">
-  <h5 class="tab active-tab" style="width: 23%;" data-show="today" aria-selected="true">Today</h5>
-  <h5 class="tab" style="width: 23%;" data-show="tomorrow" aria-selected="false">Tomorrow</h5>
-  <h5 class="tab" style="width: 23%;" data-show="later" aria-selected="false">Later</h5>
-</div>
-
-<div class="tab-content show active" id="today">
-  <% @activities.each do |activity| %>
-    <% if activity.start_time.day == Date.today.mday && activity.start_time.month == Date.today.month %>
-      <div class="meeting-wrapper">
-        <div class="inner-meeting boxed">
-          <div class="date-info-wrapper">
-            <div class="date-info">
-              <%= activity.start_time.day%>.<%= activity.start_time.month%>
-            </div>
-            <div class="time-info">
-              <%= activity.start_time.hour%>:<%= activity.start_time.min %> - <%= activity.end_time.hour%>:<%= activity.end_time.min %>
-            </div>
-          </div>
-          <div class="user-wrapper">
-            <div class="photo-wrapper">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
-            </div>
-          </div>
-          <div class="description-wrapper">
-            <div class="category">
-              <i class="fas fa-book"></i> <%= activity.name %> could be much longer text
-            </div>
-            <div class="preferences">
-              <i class="fas fa-users-cog"></i> Buddy or Group
-            </div>
-          </div>
-          <div class="actions-wrapper">
-            <div class="button-black-inverse"> Join Challenge</div>
-          </div>
-        </div>
-      </div>
+<div class="container">
+  <div class="activity-header">
+    Open Coding Challenges
+  </div>
+  <div class="activity-tabs">
+    <h5 class="tab active-tab" style="width: 23%;" data-show="today" aria-selected="true">Today</h5>
+    <h5 class="tab" style="width: 23%;" data-show="tomorrow" aria-selected="false">Tomorrow</h5>
+    <h5 class="tab" style="width: 23%;" data-show="later" aria-selected="false">Later</h5>
+  </div>
+  <div class="tab-content show active" id="today">
+    <% @activities.each do |activity| %>
+      <% if activity.start_time.day == Date.today.mday && activity.start_time.month == Date.today.month %>
+        <%= render 'shared/activity_card', activity: activity %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-
-<div class="tab-content hide-content" id="Tomorrow">
-  <% @activities.each do |activity| %>
-    <ul>
-      <% if activity.start_time.day == Date.tomorrow.mday %>
-        <li>
-          <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
-        </li>
+  </div>
+  <div class="tab-content hide-content" id="tomorrow">
+    <% @activities.each do |activity| %>
+      <% if activity.start_time.day == Date.tomorrow.mday && activity.start_time.month == Date.tomorrow.month %>
+        <%= render 'shared/activity_card', activity: activity %>
       <% end %>
-    </ul>
-  <% end %>
-</div>
-
-<div class="tab-content hide-content" id="later">
-  <% @activities.each do |activity| %>
-    <ul>
+    <% end %>
+  </div>
+  <div class="tab-content hide-content" id="later">
+    <% @activities.each do |activity| %>
       <% if activity.start_time > Date.tomorrow && activity.start_time.day != Date.tomorrow.mday %>
-        <li>
-          <%= activity.start_time %> - <%= activity.end_time %>  <%= activity.name %>
-        </li>
+        <%= render 'shared/activity_card', activity: activity %>
       <% end %>
-    </ul>
-  <% end %>
+    <% end %>
+  </div>
 </div>

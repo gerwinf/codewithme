@@ -1,8 +1,8 @@
-.meeting-wrapper {
-  margin-top: 5px;
+.activity-wrapper {
+  margin-top: 10px;
 }
 
-.inner-meeting {
+.inner-activity {
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -35,13 +35,13 @@
 .user-wrapper {
     flex: 0 0 auto;
     display: flex;
-    border-left: 1px solid #BFBFBF;
+    // border-left: 1px solid #BFBFBF;
     padding-left: 20px;
 }
 
 .description-wrapper {
-    flex: 0 0 auto;
-    border-left: 1px solid #BFBFBF;
+    flex: 0 0 500px;
+    // border-left: 1px solid #BFBFBF;
     padding-left: 20px;
 }
 
