@@ -23,7 +23,7 @@
   display: none;
 }
 
-.dashboard-tabs {
+.activity-tabs {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,4 +42,11 @@
     opacity: 1;
     border-bottom: 3px solid #ffc600;
   }
+}
+
+.activity-header {
+  text-align: center;
+  margin: 20px 20px;
+  font-size: 32px;
+  font-family: $landing-header;
 }

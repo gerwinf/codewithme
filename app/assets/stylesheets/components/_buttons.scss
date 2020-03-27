@@ -62,3 +62,20 @@
   }
 }
 
+.button-black-inverse {
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: .5em 1em;
+  border: 2px solid #000000;
+  transition-property: color, background;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+
+  &:hover {
+    text-decoration: none;
+    background: #000000;
+    color: #FFFFFF;
+  }
+}
