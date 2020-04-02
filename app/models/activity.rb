@@ -5,4 +5,5 @@ class Activity < ApplicationRecord
 
   has_one :group_activity
   has_one :group, through: :group_activity
+  has_many :users, through: :group
 end
