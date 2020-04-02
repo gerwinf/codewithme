@@ -2,10 +2,10 @@
   <div class="inner-activity boxed">
     <div class="date-info-wrapper">
       <div class="date-info">
-        <%= activity.start_time.day%>.<%= activity.start_time.month%>
+        <%= activity.start_time.strftime('%b, %d') %>
       </div>
       <div class="time-info">
-        <%= activity.start_time.hour%>:<%= activity.start_time.min %> - <%= activity.end_time.hour%>:<%= activity.end_time.min %>
+        <%= activity.start_time.strftime('%H:%M') %> - <%= activity.end_time.strftime('%H:%M') %>
       </div>
     </div>
     <div class="user-wrapper">
