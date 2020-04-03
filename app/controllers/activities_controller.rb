@@ -7,7 +7,9 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
   end
 
-  def show; end
+  def show
+    @activity = Activity.find(params[:id])
+  end
 
   def new
     @activity = Activity.new
