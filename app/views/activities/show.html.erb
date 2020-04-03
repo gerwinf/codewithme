@@ -1,1 +1,138 @@
-<h1>This is an activity</h1>
+<div class="container">
+  <!-- <div id="myProgress">
+    <div id="myBar">
+      0%
+    </div>
+  </div> -->
+  <div class="activity-header">
+    Challenge Starting In
+      <div id="timer"></div>
+  </div>
+
+  <div class="activity-wrapper">
+    <div class="inner-activity boxed">
+      <div class="description-wrapper-show">
+        <div class="category-show">
+          <i class="fas fa-book"></i> <%= @activity.name %>
+        </div>
+        <div class="link-show">
+          <i class="fas fa-external-link-alt"></i> <%= link_to @activity.link.truncate(100),@activity.link %>
+        </div>
+        <div class="start-time">
+          <i class="fas fa-clock"></i> <%= @activity.start_time %>
+        </div>
+        <div class="preferences">
+          <i class="fas fa-user"></i> <%= current_user.email %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-wrapper">
+    <div class="inner-activity boxed">
+      <div class="description-wrapper-show">
+        <div class="guidelines">
+          <i class="fas fa-bookmark"></i> Peer coding challenge guidelines
+          <ul>
+            <li>
+              Prepare beforehand e.g. understand the challenge and review required topics
+            </li>
+            <li>
+              Discuss preferred working mode in the beginning
+            </li>
+            <li>
+              Set a timer for concentrated work on your own
+            </li>
+            <li>
+              Only use the chat function once
+            </li>
+            <li>
+              Lastly, code and have fun ;)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-wrapper">
+    <div class="inner-activity boxed">
+      <div class="user-wrapper">
+        <div class="photo-wrapper">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/Eschults", class: "avatar-large", alt: "avatar-large" %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large", alt: "avatar-large" %>
+        </div>
+      </div>
+      <div class="actions-wrapper">
+        <div class="button-black-inverse" > Chat</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="activity-wrapper">
+    <div class="inner-activity boxed">
+      <div class="actions-wrapper">
+        <div class="button-wrapper">
+          <button class="button-black" onclick="move()"> Complete Challenge</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<script>
+
+// window.onload = function() {move()};
+
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width + "%";
+      }
+    }
+  }
+}
+
+const activityStartTime = document.querySelector(".start-time").innerText
+
+// Set the date we're counting down to
+var countDownDate = new Date(activityStartTime).getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="timer"
+  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+</script>
