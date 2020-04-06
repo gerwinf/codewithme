@@ -7,7 +7,7 @@
 }
 
 #myBar {
-  width: 0%;
+  width: 5%;
   height: 100%;
   border-radius: 8px;
   font-weight: 700;
@@ -26,4 +26,13 @@
   margin-top: 10px;
   margin-bottom: 10px;
   float: right;
+}
+
+.inner-activity .notification-actions {
+  opacity: 0;
+  transition: ease .3s;
+}
+
+.inner-activity:hover .notification-actions {
+  opacity: 1;
 }

@@ -1,13 +1,14 @@
 <div class="container">
-  <!-- <div id="myProgress">
+  <div id="myProgress">
     <div id="myBar">
-      0%
+      5%
     </div>
-  </div> -->
+  </div>
   <div class="activity-header">
     Challenge Starting In
       <div id="timer"></div>
   </div>
+
 
   <div class="activity-wrapper">
     <div class="inner-activity boxed">
@@ -16,7 +17,7 @@
           <i class="fas fa-book"></i> <%= @activity.name %>
         </div>
         <div class="link-show">
-          <i class="fas fa-external-link-alt"></i> <%= link_to @activity.link.truncate(100),@activity.link %>
+          <i class="fas fa-external-link-alt"></i> <%= link_to @activity.link.truncate(80),@activity.link %>
         </div>
         <div class="start-time">
           <i class="fas fa-clock"></i> <%= @activity.start_time %>
@@ -25,29 +26,34 @@
           <i class="fas fa-user"></i> <%= current_user.email %>
         </div>
       </div>
+      <div class="actions-wrapper">
+        <div class="notification-actions">
+          <button class="btn-black-landing" onclick="move()"> Mark as completed</button>
+        </div>
+      </div>
     </div>
   </div>
+
 
   <div class="activity-wrapper">
     <div class="inner-activity boxed">
       <div class="description-wrapper-show">
         <div class="guidelines">
-          <i class="fas fa-bookmark"></i> Peer coding challenge guidelines
+          <i class="fas fa-bookmark"></i> GUIDELINES
           <ul>
             <li>
-              Prepare beforehand e.g. understand the challenge and review required topics
+              Prepare beforehand e.g. understand the challenge and review prerequisite topics
             </li>
             <li>
-              Discuss preferred working mode in the beginning
+              Set a timer for ~20 minute chucks of work without interruptions ("Quiet Mode")            </li>
+            <li>
+              You can use the chat if you are stuck and someone in your group isn't in quiet mode
             </li>
             <li>
-              Set a timer for concentrated work on your own
+              Walk each other through the code when you are done, that's how to make sure you truly understand it
             </li>
             <li>
-              Only use the chat function once
-            </li>
-            <li>
-              Lastly, code and have fun ;)
+              Lastly, code, chat and have fun ;)
             </li>
           </ul>
         </div>
@@ -69,16 +75,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="activity-wrapper">
-    <div class="inner-activity boxed">
-      <div class="actions-wrapper">
-        <div class="button-wrapper">
-          <button class="button-black" onclick="move()"> Complete Challenge</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
 <script>
 
