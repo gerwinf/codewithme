@@ -1,12 +1,12 @@
 <div class="container">
   <div class="activity-header">
-    Add new activity
+    Add Your Coding Challenge
   </div>
   <%= simple_form_for(@activity) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :link %>
+    <%= f.input :name, label: "Description", placeholder: "e.g. Le Wagon ruby challenge #42, JavaScript30 lessons 3-5, Code challenge from unicorn startup " %>
+    <%= f.input :link, placeholder: "https://kitt.lewagon.com/challenges/ruby/42"%>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
-    <%= f.button :submit, class: "button-black" %>
+    <%= f.submit "Submit Challenge", class: "button-black" %>
   <% end %>
 </div>
