@@ -1,0 +1,38 @@
+#myProgress {
+  width: 100%;
+  border: black 2px solid;
+  border-radius: 8px;
+  // font-weight: 700;
+  // padding: .5em 1em;
+}
+
+#myBar {
+  width: 5%;
+  height: 100%;
+  border-radius: 8px;
+  font-weight: 700;
+  background-color: $main-yellow;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: black;
+}
+
+
+#timer {
+  color: $main-yellow;
+}
+
+.button-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.inner-activity .notification-actions {
+  opacity: 0;
+  transition: ease .3s;
+}
+
+.inner-activity:hover .notification-actions {
+  opacity: 1;
+}
