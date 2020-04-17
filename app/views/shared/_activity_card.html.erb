@@ -10,7 +10,8 @@
     </div>
     <div class="user-wrapper">
       <div class="photo-wrapper">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+        <%= image_tag avatar_url, class: "avatar-large", alt: "avatar-large" %>
       </div>
     </div>
     <div class="description-wrapper">

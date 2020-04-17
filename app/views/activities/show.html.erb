@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="activity-header">
-    Challenge Starting In
-      <div id="timer"></div>
+    Challenge
+      <div id="timer">starting in</div>
   </div>
 
   <div class="activity-wrapper">
@@ -64,7 +64,8 @@
     <div class="inner-activity boxed">
       <div class="user-wrapper">
         <div class="photo-wrapper">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar-large", alt: "avatar-large" %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/Eschults", class: "avatar-large", alt: "avatar-large" %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large", alt: "avatar-large" %>
         </div>
@@ -126,7 +127,7 @@ var x = setInterval(function() {
   // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("timer").innerHTML = "EXPIRED";
+    document.getElementById("timer").innerHTML = "STARTED";
   }
 }, 1000);
 
