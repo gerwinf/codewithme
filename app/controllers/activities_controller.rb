@@ -21,6 +21,7 @@ class ActivitiesController < ApplicationController
     user_group.group = group
     user_group.user = current_user
     user_group.save
+    group.save
     @activity = Activity.new(activity_params)
     @activity.group = group
     if @activity.save
