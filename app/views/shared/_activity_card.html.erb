@@ -11,7 +11,7 @@
     <div class="user-wrapper">
       <div class="photo-wrapper">
         <% @id = activity.group.id %>
-        <% @user_group = UserGroup.find(@id) %>
+        <% @user_group = UserGroup.find_by(group_id: @id) %>
         <% @owner = @user_group.user %>
         <% avatar_url = @owner.facebook_picture_url || "http://placehold.it/30x30" %>
         <%= image_tag avatar_url, class: "avatar-large", alt: "avatar-large" %>
