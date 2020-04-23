@@ -64,7 +64,12 @@
     <div class="inner-activity boxed">
       <div class="user-wrapper">
         <div class="photo-wrapper">
-          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <% id = @activity.group.id %>
+          <% user_group = UserGroup.find_by(group_id: id) %>
+          <% owner = user_group.user %>
+          <% first_inital = owner.email[0] %>
+          <% second_inital = owner.email.partition('.').last[0] %>
+          <% avatar_url = owner.facebook_picture_url || "https://eu.ui-avatars.com/api/?name=#{first_inital}+#{second_inital}" %>
           <%= image_tag avatar_url, class: "avatar-large", alt: "avatar-large" %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/Eschults", class: "avatar-large", alt: "avatar-large" %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large", alt: "avatar-large" %>
