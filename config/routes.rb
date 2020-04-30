@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+  get '/privacy', to: 'pages#privacy', as: :privacy
+  get '/privacy/facebook', to: 'pages#facebook_privacy', as: :facebook_privacy
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
